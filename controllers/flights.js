@@ -21,15 +21,23 @@ function create(req,res){
 function index(req,res){
   Flight.find({})
   .then(flights => {
-    res.render("flights/index", {
+    res.render("flights", {
       title:"Add Flight", 
       flights: flights
     })
   })
 }
 
+function deleteFlight(req,res){
+  Flight.findByIdAndDelete(req.params.id)
+  .then(movies =>{
+    res.redirect("/flights")
+  })
+}
+
 export{
   newFlight as new, 
   index, 
-  create
+  create, 
+  deleteFlight as delete, 
 }

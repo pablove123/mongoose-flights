@@ -14,7 +14,13 @@
     <tbody>
       <% flights.forEach(flight => { %>
         <tr>
-          <td><%= flight.airline %></td>
+          <td><%= flight.airline %> <form 
+            action="/flights/<%= flight._id %>?_method=DELETE"
+            class="delete-form"
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form></td>
           <td><%= flight.airport %></td>
           <td><%= flight.flightNo %></td>
           <td><%= flight.departs %></td>
