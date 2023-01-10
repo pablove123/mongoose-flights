@@ -1,4 +1,11 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-<h1>Edit Showing</h1>
+<h1>Edit Flight:</h1>
+<form action="/flights/<%= flight._id %>?_method=PUT" method="POST" autocomplete="off">
+  <input value="<%= flight.airline %>" type="text" name="airline">
+  <input value="<%= flight.airport %>" type="text" name="airport">
+  <input value="<%= flight.flightNo %>" type="text" name="flightNo">
+  <input value="<%= flight.departs %>" type="text" name="departs">
+  <button type="submit">Update To-Do</button>
+</form>
 <%- include('../partials/footer') %>
