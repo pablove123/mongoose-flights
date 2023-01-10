@@ -19,8 +19,12 @@ function create(req,res){
 }
 
 function index(req,res){
-  res.render("flights/index", {
-    title:"Add Flight"
+  Flight.find({})
+  .then(flights => {
+    res.render("flights/index", {
+      title:"Add Flight", 
+      flights: flights
+    })
   })
 }
 
