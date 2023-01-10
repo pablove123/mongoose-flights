@@ -45,10 +45,26 @@ function show(req,res){
   })
 }
 
+function edit(req,res){
+  Flight.findById(req.params.id)
+  .then(flight =>{
+    res.render("flights/edit", {
+      flight:flight, 
+      title: "Edit Flight"
+    })
+  })
+}
+
+function update(req,res){
+  Flight.findByIdAndUpdate(req.params.id)
+}
+
 export{
   newFlight as new, 
   index, 
   create, 
   deleteFlight as delete, 
-  show
+  show, 
+  edit, 
+  update
 }
