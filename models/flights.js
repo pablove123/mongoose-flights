@@ -11,7 +11,11 @@ const flightSchema = new Schema({
     type: String, 
     enum: ["AUS", "DFW", "DEN", "LAX", "SAN"],
     default: "DEN"},
-  departs: Date,
+  departs:{type: Date, 
+  default: function (){
+    let date = new Date()
+    return date.setFullYear(date.setFullYear() + 1)
+  }} ,
   flightNo: {
     type: Number,
     min: 10,
