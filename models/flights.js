@@ -11,12 +11,13 @@ const flightSchema = new Schema({
     type: String, 
     enum: ["AUS", "DFW", "DEN", "LAX", "SAN"],
     default: "DEN"},
-  departs: Date, 
+  departs: Date,
   flightNo: {
     type: Number,
     min: 10,
     max: 9999}
-})
+}
+)
 
 const Flight = mongoose.model('Flight', flightSchema)
 
