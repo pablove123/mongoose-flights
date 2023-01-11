@@ -20,8 +20,9 @@
 </form>
 <h4>Tickets:</h4>
 <% flight.tickets.forEach(function(ticket) { %>
-  <tr>
+  <h5>
+    <p>-------------</p>
     <p>Seat: <%= ticket.seat %></p>
     <p>Price: <%= ticket.price %></p>
-    <% }) %>
+    <% }) %> </h5>
 <%- include('../partials/footer') %>
