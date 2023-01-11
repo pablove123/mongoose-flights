@@ -3,7 +3,14 @@
 <h1>Edit Flight:</h1>
 <form action="/flights/<%= flight._id %>?_method=PUT" method="POST" autocomplete="off">
   <input value="<%= flight.airline %>" type="text" name="airline">
-  <input value="<%= flight.airport %>" type="text" name="airport">
+  <select name="mpaaRating" id="mpaa-rating-select">
+    <option value="<%= flight.airport %> "><%= flight.airport %> </option>
+      <option value="Den">DEN</option>
+      <option value="AUS">AUS</option>
+      <option value="DFW">DFW</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+  </select>
   <input value="<%= flight.flightNo %>" type="text" name="flightNo">
   <input value="<%= flight.departs %>" type="text" name="departs">
   <button type="submit">Update To-Do</button>

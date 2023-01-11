@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+
 <%- include('../partials/nav') %>
 <h1><%= title %> </h1>
 <a href="/flights/<%= flight._id %>/edit">Edit Flight Details</a>
@@ -6,4 +7,21 @@
   <p>Flight Number: <%= flight.flightNo %> </p>
   <p>Airport: <%= flight.airport %> </p>
   <p>Depart: <%= flight.departs %> </p>
+  <form 
+  id="add-seat-form"
+  action="/flights/<%= flight._id %>/tickets"
+  method="POST"
+>
+  <label for="content-textarea">Seats:</label>
+  <textarea name="seat" id="content-textarea"></textarea>
+  <label for="content2-textarea">Price:</label>
+  <textarea name="price" id="content2-textarea"></textarea>
+  <button type="submit">Add Seat</button>
+</form>
+<h4>Tickets:</h4>
+<% flight.tickets.forEach(function(ticket) { %>
+  <tr>
+    <p>Seat: <%= ticket.seat %></p>
+    <p>Price: <%= ticket.price %></p>
+    <% }) %>
 <%- include('../partials/footer') %>

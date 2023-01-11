@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 <h1>All Flights</h1>
 <main>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th>Airline</th>
@@ -14,16 +14,22 @@
     <tbody>
       <% flights.forEach(flight => { %>
         <tr>
-          <td><%= flight.airline %> <form 
+          
+          <td><%= flight.airline %> </td>
+          <td><%= flight.airport %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %> </td>
+          <td>
+            <a href="/flights/<%= flight._id %>">Details</a></td>
+            <td>
+            <form 
             action="/flights/<%= flight._id %>?_method=DELETE"
             class="delete-form"
             method="POST"
           >
             <button type="submit">X</button>
           </form></td>
-          <td><%= flight.airport %></td>
-          <td><a href="/flights/<%= flight._id %>"><%= flight.flightNo %></a></td>
-          <td><%= flight.departs %></td>
+          
         </tr>
       <% }) %>
     </tbody>
