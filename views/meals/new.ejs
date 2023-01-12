@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <h1><%= title %></h1>
+  <form id="add-meal-form" action="/meals" method="POST">
+    <label for="meal-input">Meal:</label>
+    <input type="text" name="name" id="meal-input">
+    <button type="submit">Add Meal</button>
+  </form>
+  <h2>Meals Available:</h2>
+  <% meals.forEach(function(meal) { %>
+    <p><%= meal.name %></p>
+  <% }) %>
+</main>
+<%- include('../partials/footer') %>
