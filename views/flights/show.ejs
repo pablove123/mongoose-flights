@@ -6,7 +6,7 @@
   <p>Airline: <%= flight.airline %> </p>
   <p>Flight Number: <%= flight.flightNo %> </p>
   <p>Airport: <%= flight.airport %> </p>
-  <p>Depart: <%= flight.departs %> </p>
+  <p>Depart: <%= flight.departs.getMonth()+ 1 %>/<%= flight.departs.getDate() %>/<%= flight.departs.getFullYear() %></p>
 <form action="/flights/<%= flight._id %>/meals" method="POST">
   <select name="mealId">
     <% meals.forEach(meal => { %>

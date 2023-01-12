@@ -18,7 +18,7 @@
           <td><%= flight.airline %> </td>
           <td><%= flight.airport %></td>
           <td><%= flight.flightNo %></td>
-          <td><%= flight.departs %> </td>
+          <td><%= flight.departs.getMonth()+ 1 %>/<%= flight.departs.getDate() %>/<%= flight.departs.getFullYear() %> </td>
           <td>
             <a href="/flights/<%= flight._id %>">Details</a></td>
             <td>
